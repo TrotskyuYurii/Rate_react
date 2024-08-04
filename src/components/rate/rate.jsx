@@ -5,7 +5,7 @@ const Rate = () => {
   const [rating, setRating] = useState(0);
 
   useEffect(() => {
-    console.log('Current rating:', rating);
+    window.localStorage.setItem("currentRating", rating);
   }, [rating]);
 
   const changeRating = (newRating) => {
@@ -29,7 +29,7 @@ const Rate = () => {
         <Ratings.Widget widgetHoverColor="black" />
         <Ratings.Widget />
       </Ratings>
-      <p>Current rating: {rating}</p>
+      <p>Поточний рейтинг: {rating}</p>
     </div>
   );
 };
